@@ -1,0 +1,32 @@
+:root {
+  --bg-dark: #0f0f0f;
+  --accent: #b89366;
+  --accent-light: #cfa878;
+}
+
+/* NINCS háttérkép itt, csak a tipográfia és a portré-kártya stílusa */
+.home-wrapper {
+  min-height: 100vh;
+  padding: 4rem 1rem;
+}
+
+h1,
+p {
+  text-shadow: 0 1px 3px rgb(0 0 0 / 60%);
+}
+
+.portrait-wrapper {
+  background: transparent !important;
+  backdrop-filter: none;
+  box-shadow: none;
+
+  padding: 0;
+  border-radius: 1rem;
+  max-width: 380px;
+}
+
+@media (max-width: 991.98px) {
+  .home-wrapper .text-light {
+    text-align: center;
+  }
+}

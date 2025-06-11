@@ -1,0 +1,41 @@
+/* Alapszínek a hero-szakasz árnyalataira hangolva */
+:root {
+  --bg-dark: #0f0f0f;
+  --text-light: #e6e0d6;
+  --accent: #b89366; /* fő barnás-arany tónus */
+  --accent-light: #cfa878;
+}
+
+.navbar {
+  background: #0f0f0f;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 40%);
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    /* jobb oldalra igazítás */
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+  }
+
+  a {
+    color: #b89366;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    transition: color 0.25s ease;
+
+    &:hover {
+      color: #cfa878;
+    }
+  }
+
+  /* Aktív route kiemelése */
+  .active a {
+    color: #e6e0d6;
+  }
+}
