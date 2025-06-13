@@ -1,6 +1,6 @@
 <!-- Teljes magasságú hero, háttérkép közvetlenül a style attribútumban -->
 <section
-  class="home-wrapper d-flex align-items-center"
+  class="home-wrapper d-flex align-items-center p-4"
   style="
     background-image: url('./img/background.png');
     background-size: cover;
@@ -9,31 +9,45 @@
   "
 >
   <div class="container">
-    <div class="row g-4 align-items-center">
+    <div class="row g-4">
       <!-- Bal oldal: bemutatkozó szöveg -->
-      <div class="col-lg-6 text-light">
-        <h1 class="display-4 fw-bold mb-3">Hi, I’m John Doe</h1>
+      <div class="left-side col-lg-6 p-4">
+        <h1 class="name display-4 fw-bold mb-3">Hi, I’m Tibor Rumi</h1>
 
-        <p class="lead mb-2">
-          Frontend developer with a passion for pixel-perfect design.
-        </p>
-        <p class="mb-2">I craft fast, accessible web apps.</p>
+        <h1 class="frontend display-4 mb-2">Frontend Developer</h1>
+        <p class="mb-2">I craft responsive and engaging web experiences.</p>
         <p class="mb-2">Lifelong learner of modern&nbsp;JS.</p>
-        <p class="mb-2">Lover of coffee & mountains.</p>
+
         <p>Let’s build something amazing together.</p>
+        <button class="btn">View My Work</button>
+      </div>
+
+      <div
+        class="col-lg-1 d-flex flex-column justify-content-center align-items-end"
+      >
+        <img class="lang-5" src=".\img\typescript.png" alt="html5" />
+        <img class="lang-6" src=".\img\angular.png" alt="html5" />
+        <img class="lang-7" src=".\img\vue.png" alt="html5" />
+        <img class="lang-8" src=".\img\react.png" alt="html5" />
       </div>
 
       <!-- Jobb oldal: üveg-hatású portré -->
-      <div
-        class="col-lg-6 d-flex justify-content-lg-end justify-content-center"
-      >
+      <div class="col-lg-4 d-flex justify-content-end">
         <div class="portrait-wrapper shadow-lg">
           <img
             src=".\img\portrait.png"
             alt="Portrait of John Doe"
-            class="img-fluid rounded"
+            class="img-fluid rounded portrait"
           />
         </div>
+      </div>
+      <div
+        class="col-lg-1 d-flex flex-column justify-content-center align-items-end"
+      >
+        <img class="lang-1" src=".\img\html.png" alt="html5" />
+        <img class="lang-2" src=".\img\css.png" alt="html5" />
+        <img class="lang-3" src=".\img\bootstrap.png" alt="html5" />
+        <img class="lang-4" src=".\img\javascript.png" alt="html5" />
       </div>
     </div>
   </div>
