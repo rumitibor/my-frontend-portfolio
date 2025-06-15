@@ -1,0 +1,147 @@
+.footer-wrapper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  padding: 1rem 2rem;
+
+  max-height: 160px;
+  overflow: hidden;
+
+  background: linear-gradient(
+    to top,
+    rgba(15, 15, 15, 0.85) 0%,
+    rgba(15, 15, 15, 0.6) 50%,
+    rgba(15, 15, 15, 0) 100%
+  );
+
+  .quote-card {
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(4px);
+
+    max-height: 130px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+
+    blockquote {
+      flex: 1 1 auto;
+      overflow-y: auto;
+      margin: 0 0 0.5rem 0;
+      font-style: italic;
+      color: #ae8654;
+    }
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: rgba(15, 15, 15, 0.7);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #ae8654;
+      border-radius: 3px;
+    }
+
+    scrollbar-width: thin;
+    scrollbar-color: #b89366 rgba(15, 15, 15, 0.7);
+  }
+}
+
+.footer-wrapper .row,
+.footer-wrapper .col-md-4,
+.footer-wrapper .quote-card {
+  height: 100%;
+}
+
+.footer-meta {
+  font-size: 0.875rem;
+}
+
+.copy {
+  color: #cbc3b6;
+  margin-bottom: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 100%;
+}
+
+.quote--in {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fade-in 1200ms ease-out forwards;
+  will-change: opacity, transform;
+}
+
+.about-me-wrapper {
+  display: flex;
+  gap: 1rem;
+
+  @media (max-width: 575.98px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.about-label {
+  color: #ae8654;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* square speech bubble */
+.speech-bubble {
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(4px);
+  // border: 2px solid #ae8654;
+  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  color: #ae8654;
+  font-size: 0.875rem;
+  font-style: italic;
+  position: relative;
+  max-height: 130px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: 12px;
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 10px solid #ae8654;
+  }
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .quote-card .quote {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .footer-wrapper {
+    flex-direction: column;
+    text-align: center;
+
+    .quote-card {
+      max-width: none;
+      width: 100%;
+    }
+  }
+}
