@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+
+:root {
+  --bg-dark: #0f0f0f;
+  --accent: #b89366;
+  --accent-light: #cfa878;
+  --text-light: #e6e0d6;
+
+  --bg-dark: #0f0f0f;
+  --bg-mid: #1a1a1a;
+  --surface-dark: #30261f;
+  --surface: #4a3a2e;
+
+  --text-light: #e6e0d6;
+
+  --accent-dark: #8c6b46;
+  --accent: #b89366;
+  --accent-light: #cfa878;
+  --accent-lighter: #e0bf8c;
+
+  --deep-umber: #784f3a;
+  --sand-gold: #d4b287;
+  --highlight: #ffd9b0;
+}
+
+/* NINCS háttérkép itt, csak a tipográfia és a portré-kártya stílusa */
+.home-wrapper {
+  min-height: 100vh;
+  padding: 2rem 1rem;
+}
+
+p {
+  color: #e6e0d6;
+  padding-bottom: 1.2rem;
+  font-size: 1.2rem;
+  font-family: "Edu NSW ACT Hand", cursive;
+}
+
+.name {
+  color: #f9d59f;
+  font-family: "Merriweather", serif;
+}
+
+.frontend {
+  color: #ae8654;
+  padding-bottom: 1.5rem;
+  font-family: "Merriweather", serif;
+  font-weight: 600;
+  font-size: 60px;
+}
+
+.btn {
+  background-color: #93642b;
+  margin-top: 1rem;
+  color: #e6e0d6;
+  padding: 0.5rem 1.5rem;
+  &:hover {
+    background-color: #fcd7a9;
+    transform: scale(1.05);
+    color: #3a3737;
+  }
+}
+
+.portrait-wrapper {
+  background: transparent !important;
+  backdrop-filter: none;
+  box-shadow: none;
+
+  padding: 0;
+  border: none;
+  max-width: 400px;
+}
+
+.lang-1 {
+  max-width: 70px;
+  padding-bottom: 50px;
+  translate: -80px -30px;
+}
+.lang-2 {
+  max-width: 70px;
+  padding-bottom: 50px;
+  translate: 0px -30px;
+}
+.lang-3 {
+  max-width: 70px;
+  padding-bottom: 50px;
+  translate: 40px -20px;
+}
+.lang-4 {
+  max-width: 70px;
+  padding-bottom: 50px;
+  translate: 40px 20px;
+}
+.lang-5 {
+  max-width: 70px;
+  padding-bottom: 50px;
+  translate: -80px -30px;
+}
+.lang-6 {
+  max-width: 70px;
+  padding-bottom: 50px;
+  translate: 20px -30px;
+}
+.lang-7 {
+  max-width: 70px;
+  padding-bottom: 50px;
+  translate: -130px -20px;
+}
+.lang-8 {
+  max-width: 70px;
+  padding-bottom: 50px;
+  translate: -60px 20px;
+}
+
+@media (max-width: 991.98px) {
+  .home-wrapper .text-light {
+    text-align: center;
+  }
+}

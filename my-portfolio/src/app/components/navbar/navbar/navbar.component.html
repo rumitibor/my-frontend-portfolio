@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg fixed-top bg-transparent shadow-sm">
+  <!-- LOGÓ -->
+  <div class="navbar-brand" routerLink="/">
+    <img class="logo-img" src="./img/logo.png" alt="logo" />
+  </div>
+
+  <button
+    class="navbar-toggler border-0"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#mainNavbar"
+    aria-controls="mainNavbar"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="mainNavbar">
+    <ul class="navbar-nav ms-lg-auto text-center">
+      <li
+        class="nav-item"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <a routerLink="/" class="nav-link">Home</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a routerLink="/about" class="nav-link">About</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a routerLink="/projects" class="nav-link">Projects</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a routerLink="/contact" class="nav-link">Contact</a>
+      </li>
+    </ul>
+  </div>
+</nav>
