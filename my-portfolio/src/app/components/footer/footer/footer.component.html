@@ -1,12 +1,16 @@
-<footer class="footer-wrapper px-4 py-3">
+<footer
+  [ngClass]="{
+    'footer-wrapper': true,
+    'px-4': true,
+    'py-3': true,
+    fixed: isFixed
+  }"
+>
   <div class="row align-items-end gx-4 mb-1">
-    <!-- ① Idézet-kártya: 12 oszlop mobilon, 4 oszlop md-től felfelé -->
     <div class="col-md-4 p-2">
-      <!-- footer.component.html  (részlet) -->
       <div class="quote-card p-3 rounded shadow-sm h-100 w-100 mb-2">
-        <!-- Minden idézetnél ÚJ blockquote születik -->
-        <blockquote *ngFor="let q of [quote]" class="quote quote--in mb-2">
-          “{{ q?.content }}”
+        <blockquote class="quote quote--in mb-2" *ngIf="quote" @quoteAnim>
+          “{{ quote.content }}”
         </blockquote>
       </div>
     </div>
@@ -18,9 +22,8 @@
     <div
       class="about-me-wrapper col-md-4 d-flex align-items-center justify-content-between pe-3"
     >
-      <h4 class="col-3 about-label m-0">About&nbsp;Me</h4>
-
-      <div class="col-9 speech-bubble">
+      <h4 class="about-label m-0">About&nbsp;Me</h4>
+      <div class="speech-bubble">
         <p class="mb-1">
           Front-end artisan obsessed with pixel-perfect interfaces. Angular &
           TypeScript enthusiast, always chasing smooth UX. Coffee-powered,

@@ -1,6 +1,7 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { interval, Subscription } from 'rxjs';
-import { startWith, switchMap } from 'rxjs/operators';
+import { Component, HostBinding, OnDestroy, OnInit } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
+import { Subject, interval } from 'rxjs';
+import { filter, startWith, switchMap, takeUntil } from 'rxjs/operators';
 import { FooterService, Quote } from '../../../services/footer.service';
 import { animate, style, transition, trigger } from '@angular/animations';
 
@@ -8,10 +9,8 @@ import { animate, style, transition, trigger } from '@angular/animations';
   selector: 'app-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss'],
-
   animations: [
     trigger('quoteAnim', [
-      /* belépés */
       transition(':enter', [
         style({ opacity: 0, transform: 'translateY(10px)', color: '#ae8654' }),
         animate(
@@ -19,7 +18,6 @@ import { animate, style, transition, trigger } from '@angular/animations';
           style({ opacity: 1, transform: 'translateY(0)' })
         ),
       ]),
-      /* kilépés – itt sötétül és kifakul */
       transition(':leave', [
         animate(
           '600ms ease-in',
@@ -35,27 +33,44 @@ import { animate, style, transition, trigger } from '@angular/animations';
 })
 export class FooterComponent implements OnInit, OnDestroy {
   quote: Quote | null = null;
-  private sub!: Subscription;
 
   readonly currentYear = new Date().getFullYear();
 
-  constructor(private footerService: FooterService) {}
+  @HostBinding('class.fixed') isFixed = false;
+
+  private readonly destroy$ = new Subject<void>();
+
+  constructor(private footerService: FooterService, private router: Router) {}
 
   ngOnInit(): void {
-    /* azonnal + 30 s-enként frissít */
-    this.sub = interval(10_000)
+    this.setFixedMode(this.router.url);
+    this.router.events
+      .pipe(
+        filter((e): e is NavigationEnd => e instanceof NavigationEnd),
+        takeUntil(this.destroy$)
+      )
+      .subscribe((e) => this.setFixedMode(e.urlAfterRedirects));
+
+    interval(10_000)
       .pipe(
         startWith(0),
-        switchMap(() => this.footerService.getRandom())
+        switchMap(() => this.footerService.getRandom()),
+        takeUntil(this.destroy$)
       )
       .subscribe((q) => (this.quote = q));
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
   refresh(): void {
     this.footerService.getRandom().subscribe((q) => (this.quote = q));
   }
 
-  ngOnDestroy(): void {
-    this.sub?.unsubscribe();
+  private setFixedMode(url: string): void {
+    const clean = url.split(/[?#]/)[0];
+    this.isFixed = clean === '/' || clean === '' || clean.startsWith('/home');
   }
 }
