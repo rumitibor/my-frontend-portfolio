@@ -1,3 +1,11 @@
+.about-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
 .about-intro {
   max-width: 860px;
   backdrop-filter: blur(6px);
@@ -5,10 +13,11 @@
   border-radius: 12px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.55);
   padding: clamp(1.5rem, 4vw, 2.5rem);
-  color: var(--text-light);
+  color: #dab184;
+  margin-top: 100px !important;
 
   .about-title {
-    color: var(--accent);
+    color: #cfa878;
     letter-spacing: 0.8px;
   }
 
@@ -18,12 +27,94 @@
     margin-bottom: 1.2rem;
 
     .strike {
-      text-decoration: line-through;
       opacity: 0.55;
     }
     .highlight {
-      color: var(--accent-light);
+      color: #cfa878;
       font-weight: 600;
     }
   }
+}
+
+/* — címek, elválasztó — */
+.subtitle {
+  color: #b89366;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+.divider {
+  border: 0;
+  height: 2px;
+  background: #b89366;
+  width: 60px;
+}
+
+/* — quick-facts — */
+.fact-list .fact {
+  background: rgba(184, 147, 102, 0.15);
+  border: 1px solid #b89366;
+  border-radius: 20px;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.85rem;
+  margin: 0.25rem 0.35rem;
+}
+
+/* — tag-cloud — */
+.tag-cloud .tag {
+  display: inline-block;
+  margin: 0.25rem 0.35rem;
+  padding: 0.35rem 0.85rem;
+  border: 1px dashed #cfa878;
+  border-radius: 16px;
+  font-size: 0.8rem;
+  color: #cfa878;
+}
+
+/* — mini idővonal — */
+.mini-timeline {
+  list-style: none;
+  padding-left: 0;
+  position: relative;
+  margin-left: 1rem;
+}
+.mini-timeline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.2rem;
+  bottom: 0.2rem;
+  width: 2px;
+  background: #b89366;
+}
+.mini-timeline li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.6rem;
+  font-size: 0.9rem;
+}
+.mini-timeline li::before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  top: 0.35rem;
+  width: 10px;
+  height: 10px;
+  background: #b89366;
+  border-radius: 50%;
+}
+
+/* — CTA gomb — */
+.btn-accent,
+.cta-btn {
+  background: #b89366;
+  border: none;
+  color: #0f0f0f;
+  font-weight: 600;
+  padding: 0.55rem 1.4rem;
+  transition: transform 0.25s, background 0.25s;
+  border-radius: 28px;
+}
+.btn-accent:hover {
+  background: #cfa878;
+  transform: translateY(-2px) scale(1.03);
 }

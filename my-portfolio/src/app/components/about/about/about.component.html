@@ -1,21 +1,84 @@
-<!-- About – rövid bemutatkozó -->
-<section class="about-intro container mb-5 px-3 px-md-4">
-  <h2 class="about-title text-uppercase fw-bold mb-3">Hello, I’m Tibor!</h2>
+<div
+  class="about-box p-4"
+  style="
+    background-image: url('./img/background.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  "
+>
+  <section class="about-intro container mb-5 px-3 px-md-4">
+    <!-- ───── heading ───── -->
+    <h2 class="about-title text-uppercase fw-bold mb-3">Hello, I’m Tibor!</h2>
 
-  <p class="lead about-text">
-    37-year-old kitchen-boss turned code-cook. Térdsérülés zárta a
-    <span class="strike">15 év, 500 °C-os grill</span> fejezetet, és megnyitotta
-    a <strong>JavaScript + CSS</strong> konyhát, ahol már
-    <em>pixel-pontosságban</em> pirítom a felhasználói élményt.
-  </p>
+    <!-- ───── intro paragraphs ───── -->
+    <p class="lead about-text">
+      37-year-old kitchen-boss turned code-cook.
+      <span class="strike">15 years, 500 °C grill duty</span> closed one
+      chapter, and opened a <strong>JavaScript + CSS</strong> kitchen where I
+      sear the user experience with <em>pixel-perfect flair</em>.
+    </p>
 
-  <p class="about-text">
-    A gyors szerviz, csapat­irányítás és HACCP precizitás most
-    <strong>komponens­architektúrában</strong>,
-    <strong>accessibility-checkben</strong> és
-    <strong>Lighthouse 95+</strong> pontokban él tovább. Célom: ugyanazzal a
-    lendülettel és jókedvvel
-    <span class="highlight">frontend fejlesztőként</span> ízesíteni a
-    projekteket, ahogy eddig a fine-dining tányérokat.
-  </p>
-</section>
+    <p class="about-text">
+      Fast service, crew leadership and HACCP precision now live on as
+      <strong>component architecture</strong>,
+      <strong>accessibility checks</strong> and
+      <strong>Lighthouse 95+</strong> scores. My goal? To season every project
+      with the same drive and good vibes I once plated fine-dining dishes with
+      &mdash; only now as a
+      <span class="highlight">frontend&nbsp;developer</span>.
+    </p>
+
+    <!-- ───── quick facts ───── -->
+    <hr class="divider" />
+
+    <h3 class="subtitle mb-3">Quick&nbsp;Facts</h3>
+    <ul class="fact-list list-inline mb-4">
+      <li class="list-inline-item fact">5 + years as head&nbsp;chef</li>
+      <li class="list-inline-item fact">100 + events catered</li>
+      <li class="list-inline-item fact">Angular &amp; React boot-camp grad</li>
+      <li class="list-inline-item fact">Daily Latte-Art champion ☕</li>
+    </ul>
+
+    <!-- ───── tech seasoning ───── -->
+    <h3 class="subtitle mb-3">Tech&nbsp;Stack&nbsp;Seasoning</h3>
+    <div class="tag-cloud mb-4">
+      <span class="tag">Angular 16</span>
+      <span class="tag">TypeScript</span>
+      <span class="tag">RxJS</span>
+      <span class="tag">SCSS&nbsp;/ BEM</span>
+      <span class="tag">Tailwind&nbsp;CSS</span>
+      <span class="tag">Jest&nbsp;&amp;&nbsp;Testing Library</span>
+      <span class="tag">Figma&nbsp;→&nbsp;Code</span>
+      <span class="tag">Git&nbsp;Flow</span>
+    </div>
+
+    <!-- ───── mini timeline ───── -->
+    <h3 class="subtitle mb-3">Timeline</h3>
+    <ul class="mini-timeline mb-4">
+      <li>
+        <strong>2006&nbsp;–&nbsp;2010</strong>&nbsp;— Chef Apprentice, Budapest
+      </li>
+      <li>
+        <strong>2011&nbsp;–&nbsp;2017</strong>&nbsp;— Sous-Chef → Kitchen
+        Manager
+      </li>
+      <li>
+        <strong>2018&nbsp;–&nbsp;2023</strong>&nbsp;— Executive Chef (25-person
+        brigade)
+      </li>
+      <li><strong>2024</strong>&nbsp;— Frontend&nbsp;Boot-camp Graduate</li>
+      <li>
+        <strong>2025</strong>&nbsp;—
+        <span class="highlight">Open for Hire!</span>
+      </li>
+    </ul>
+
+    <!-- ───── call-to-action ───── -->
+    <div class="text-center">
+      <a routerLink="/contact" class="cta-btn btn btn-accent mt-2">
+        Let’s cook some&nbsp;UI&nbsp;✨
+      </a>
+    </div>
+  </section>
+</div>

@@ -11,7 +11,55 @@ body {
   line-height: 1.55;
   color: #e6e0d6;
 
-  padding-top: 400px;
+  padding-top: 100px;
+}
+
+.travel {
+  max-width: 95%;
+  margin-bottom: 150px;
+  font-family: "Montserrat", sans-serif;
+
+  text-align: center;
+  color: #ffd9b0;
+
+  /* ───── 3D dőlésszög ───── */
+  transform: perspective(900px) rotateX(10deg);
+  transform-style: preserve-3d;
+
+  /* ───── neon glow (több réteg) ───── */
+  text-shadow: 0 0 4px #ffd9b0, 0 0 8px #ffd9b0, 0 0 12px lighten(#ffd9b0, 10%),
+    0 0 18px lighten(#ffd9b0, 15%), 0 0 26px lighten(#ffd9b0, 25%);
+
+  /* ───── finom villódzás animáció ───── */
+  animation: flicker 2.8s infinite alternate;
+
+  /* választható: sötét üveges blokk hátul */
+  // background: rgba(#0f0f0f, 0.25);
+
+  // border-radius: 8px;
+}
+
+/* ────────── keyframes: véletlen kis fényerő-ingadozás ────────── */
+@keyframes flicker {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    text-shadow: 0 0 4px #ffd9b0, 0 0 8px #ffd9b0,
+      0 0 12px lighten(#ffd9b0, 10%), 0 0 18px lighten(#ffd9b0, 15%),
+      0 0 26px lighten(#ffd9b0, 25%);
+    opacity: 1;
+  }
+
+  20%,
+  24%,
+  55% {
+    text-shadow: 0 0 2px #0f0f0f, 0 0 6px #0f0f0f;
+    opacity: 0.65;
+  }
 }
 
 .cv-wrapper {
@@ -36,6 +84,7 @@ body {
 .section:first-of-type {
   grid-column: 7 / -1;
   transform: translateX(clamp(420px, 8vw, 80px));
+  margin-top: 400px;
 }
 
 .section:nth-of-type(2n + 1) {
@@ -49,6 +98,11 @@ body {
 .section:hover {
   transform: translateY(-6px) scale(1.02) !important;
   box-shadow: 0 12px 28px rgb(0 0 0 / 60%);
+}
+
+.name-fix {
+  position: fixed;
+  margin-left: 50px;
 }
 
 .section {
