@@ -9,9 +9,10 @@ import { FooterComponent } from './components/footer/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CvComponent } from './components/cv/cv/cv.component';
 import { AboutComponent } from './components/about/about/about.component';
+import { ContactComponent } from './components/contact/contact/contact.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, HomeComponent, FooterComponent, CvComponent, AboutComponent],
+  declarations: [AppComponent, NavbarComponent, HomeComponent, FooterComponent, CvComponent, AboutComponent, ContactComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
