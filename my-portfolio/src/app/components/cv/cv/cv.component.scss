@@ -14,6 +14,18 @@ body {
   padding-top: 100px;
 }
 
+.cv-link {
+  color: #777573;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: lighten(#ffd9b0, 1%);
+    text-decoration: underline;
+  }
+}
+
 .travel {
   max-width: 95%;
   margin-bottom: 150px;
@@ -22,45 +34,37 @@ body {
   text-align: center;
   color: #ffd9b0;
 
-  /* ───── 3D dőlésszög ───── */
   transform: perspective(900px) rotateX(10deg);
   transform-style: preserve-3d;
 
-  /* ───── neon glow (több réteg) ───── */
   text-shadow: 0 0 4px #ffd9b0, 0 0 8px #ffd9b0, 0 0 12px lighten(#ffd9b0, 10%),
     0 0 18px lighten(#ffd9b0, 15%), 0 0 26px lighten(#ffd9b0, 25%);
 
   /* ───── finom villódzás animáció ───── */
-  animation: flicker 2.8s infinite alternate;
-
-  /* választható: sötét üveges blokk hátul */
-  // background: rgba(#0f0f0f, 0.25);
-
-  // border-radius: 8px;
+  // animation: flicker 2.8s infinite alternate;
 }
 
-/* ────────── keyframes: véletlen kis fényerő-ingadozás ────────── */
-@keyframes flicker {
-  0%,
-  18%,
-  22%,
-  25%,
-  53%,
-  57%,
-  100% {
-    text-shadow: 0 0 4px #ffd9b0, 0 0 8px #ffd9b0,
-      0 0 12px lighten(#ffd9b0, 10%), 0 0 18px lighten(#ffd9b0, 15%),
-      0 0 26px lighten(#ffd9b0, 25%);
-    opacity: 1;
-  }
+// @keyframes flicker {
+//   0%,
+//   18%,
+//   22%,
+//   25%,
+//   53%,
+//   57%,
+//   100% {
+//     text-shadow: 0 0 4px #ffd9b0, 0 0 8px #ffd9b0,
+//       0 0 12px lighten(#ffd9b0, 10%), 0 0 18px lighten(#ffd9b0, 15%),
+//       0 0 26px lighten(#ffd9b0, 25%);
+//     opacity: 1;
+//   }
 
-  20%,
-  24%,
-  55% {
-    text-shadow: 0 0 2px #0f0f0f, 0 0 6px #0f0f0f;
-    opacity: 0.65;
-  }
-}
+//   20%,
+//   24%,
+//   55% {
+//     text-shadow: 0 0 2px #0f0f0f, 0 0 6px #0f0f0f;
+//     opacity: 0.65;
+//   }
+// }
 
 .cv-wrapper {
   display: grid;
