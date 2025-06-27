@@ -1,0 +1,64 @@
+<div
+  class="projects-wrapper p-4"
+  style="
+    background-image: url('./img/background.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  "
+>
+  <section class="d-flex align-items-center">
+    <div class="container">
+      <h2 class="section-heading text-center mb-4">Featured&nbsp;Projects</h2>
+
+      <div class="project-grid">
+        <a
+          class="project-card"
+          *ngFor="let p of projects"
+          [href]="p.demo"
+          target="_blank"
+          rel="noopener"
+        >
+          <!-- borítókép -->
+          <img class="cover" [src]="p.img" [alt]="p.title" />
+
+          <!-- lebegő infósáv -->
+          <div class="info">
+            <h3 class="title">{{ p.title }}</h3>
+
+            <ul class="tech list-inline">
+              <li *ngFor="let t of p.tech">
+                <!-- belső tag-oldal -->
+                <a
+                  *ngIf="t.link?.startsWith('/')"
+                  [routerLink]="t.link"
+                  class="badge tech-tag"
+                  >{{ t.name }}</a
+                >
+
+                <!-- külső link -->
+                <a
+                  *ngIf="t.link && !t.link.startsWith('/')"
+                  [href]="t.link"
+                  target="_blank"
+                  rel="noopener"
+                  class="badge tech-tag"
+                  >{{ t.name }}</a
+                >
+
+                <!-- csak szöveg -->
+                <span *ngIf="!t.link" class="badge tech-tag">{{ t.name }}</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- CTA ikon -->
+          <div class="cta">
+            <i class="bi bi-box-arrow-up-right"></i>
+          </div>
+          <div class="card-name">{{ p.title }}</div>
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
