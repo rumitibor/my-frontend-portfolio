@@ -39,45 +39,20 @@ body {
 
   text-shadow: 0 0 4px #ffd9b0, 0 0 8px #ffd9b0, 0 0 12px lighten(#ffd9b0, 10%),
     0 0 18px lighten(#ffd9b0, 15%), 0 0 26px lighten(#ffd9b0, 25%);
-
-  /* ───── finom villódzás animáció ───── */
-  // animation: flicker 2.8s infinite alternate;
 }
 
-// @keyframes flicker {
-//   0%,
-//   18%,
-//   22%,
-//   25%,
-//   53%,
-//   57%,
-//   100% {
-//     text-shadow: 0 0 4px #ffd9b0, 0 0 8px #ffd9b0,
-//       0 0 12px lighten(#ffd9b0, 10%), 0 0 18px lighten(#ffd9b0, 15%),
-//       0 0 26px lighten(#ffd9b0, 25%);
-//     opacity: 1;
-//   }
+// .cv-wrapper {
+//   display: grid;
+//   grid-template-columns: repeat(12, 1fr);
+//   grid-auto-rows: minmax(0, auto);
+//   gap: 4rem 0;
 
-//   20%,
-//   24%,
-//   55% {
-//     text-shadow: 0 0 2px #0f0f0f, 0 0 6px #0f0f0f;
-//     opacity: 0.65;
-//   }
+//   max-width: 960px;
+//   width: 100%;
+//   margin-inline: auto;
+
+//   padding-inline: clamp(1rem, 4vw, 2rem);
 // }
-
-.cv-wrapper {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-auto-rows: minmax(0, auto);
-  gap: 4rem 0;
-
-  max-width: 960px;
-  width: 100%;
-  margin-inline: auto;
-
-  padding-inline: clamp(1rem, 4vw, 2rem);
-}
 
 .section {
   grid-column: 2 / span 10;
@@ -206,7 +181,7 @@ a:hover {
   font-style: italic;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 991px) {
   .cv-wrapper {
     grid-template-columns: 1fr;
     gap: 3rem 0;
@@ -215,6 +190,14 @@ a:hover {
   .section:first-of-type {
     grid-column: 1 / -1;
     transform: none !important;
-    margin: 0 1rem;
+    margin: 0 auto;
+    margin-top: 5rem;
+    width: 80%;
+
+    text-align: center;
+  }
+
+  #header {
+    margin-top: 400px;
   }
 }
