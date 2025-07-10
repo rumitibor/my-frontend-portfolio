@@ -6,7 +6,7 @@
   z-index: 999;
   padding: 1rem 2rem;
 
-  max-height: 160px;
+  max-height: 150px;
   overflow: hidden;
   background-color: #212020;
 
@@ -86,11 +86,6 @@
 .about-me-wrapper {
   display: flex;
   gap: 1rem;
-
-  @media (max-width: 575.98px) {
-    flex-direction: column;
-    align-items: center;
-  }
 }
 
 .about-label {
@@ -99,11 +94,9 @@
   white-space: nowrap;
 }
 
-/* square speech bubble */
 .speech-bubble {
   background: rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(4px);
-  // border: 2px solid #ae8654;
   border-radius: 4px;
   padding: 0.75rem 1rem;
   color: #ae8654;
@@ -111,6 +104,7 @@
   font-style: italic;
   position: relative;
   max-height: 130px;
+  overflow-y: auto;
 
   &::after {
     content: "";
@@ -123,6 +117,17 @@
     border-bottom: 8px solid transparent;
     border-right: 10px solid #ae8654;
   }
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #ae8654;
+    border-radius: 3px;
+  }
+
+  scrollbar-width: thin;
+  scrollbar-color: #ae8654 transparent;
 }
 
 @keyframes fade-in {
@@ -132,22 +137,56 @@
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .quote-card .quote {
-    animation: none;
-    opacity: 1;
-    transform: none;
+@media (max-width: 991px) {
+  .footer-wrapper,
+  .footer-wrapper.fixed {
+    position: relative !important;
+    max-height: 500px;
+    background-color: #212020;
+    padding-bottom: 2rem;
+  }
+
+  .footer-wrapper .row {
+    text-align: center;
+  }
+  .footer-wrapper .about-me-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .footer-wrapper .quote-card {
+    width: 100%;
+    max-width: none;
   }
 }
 
-@media (max-width: 575.98px) {
-  .footer-wrapper {
-    flex-direction: column;
-    text-align: center;
+@media (max-width: 768px) {
+  .footer-wrapper,
+  .footer-wrapper.fixed {
+    position: relative !important;
+    max-height: 500px;
+    background-color: #212020;
+    padding-bottom: 2rem;
+  }
 
-    .quote-card {
-      max-width: none;
-      width: 100%;
-    }
+  .footer-wrapper .row {
+    text-align: center;
+  }
+  .footer-wrapper .about-me-wrapper {
+    order: 1;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .footer-wrapper .quote-card {
+    width: 100%;
+    max-width: none;
+  }
+
+  .footer-wrapper .copy {
+    order: 2;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
   }
 }
