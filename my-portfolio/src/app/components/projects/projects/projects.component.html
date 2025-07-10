@@ -9,55 +9,104 @@
 >
   <section class="d-flex align-items-center">
     <div class="container">
-      <h2 class="section-heading text-center mb-4">Featured&nbsp;Projects</h2>
+      <h2 class="section-heading text-center">Featured&nbsp;Projects</h2>
 
       <div class="project-grid">
-        <a
-          class="project-card"
-          *ngFor="let p of projects"
-          [href]="p.demo"
-          target="_blank"
-          rel="noopener"
-        >
-          <!-- borítókép -->
-          <img class="cover" [src]="p.img" [alt]="p.title" />
+        <!-- <ng-container *ngFor="let p of projects">
+          <a
+            class="project-card"
+            [href]="p.demo"
+            target="_blank"
+            rel="noopener"
+          >
+            <img class="cover" [src]="p.img" [alt]="p.title" />
 
-          <!-- lebegő infósáv -->
-          <div class="info">
-            <h3 class="title">{{ p.title }}</h3>
+            <div class="info">
+              <h3 class="title">{{ p.title }}</h3>
+              <ul class="tech list-inline">
+                <li *ngFor="let t of p.tech">
+                  <a
+                    *ngIf="t.link?.startsWith('/')"
+                    [routerLink]="t.link"
+                    class="badge tech-tag"
+                    >{{ t.name }}</a
+                  >
+                  <a
+                    *ngIf="t.link && !t.link.startsWith('/')"
+                    [href]="t.link"
+                    target="_blank"
+                    rel="noopener"
+                    class="badge tech-tag"
+                    >{{ t.name }}</a
+                  >
+                  <span *ngIf="!t.link" class="badge tech-tag">{{
+                    t.name
+                  }}</span>
+                </li>
+              </ul>
+            </div>
 
-            <ul class="tech list-inline">
-              <li *ngFor="let t of p.tech">
-                <!-- belső tag-oldal -->
-                <a
-                  *ngIf="t.link?.startsWith('/')"
-                  [routerLink]="t.link"
-                  class="badge tech-tag"
-                  >{{ t.name }}</a
-                >
+            <div class="cta">
+              <i class="bi bi-box-arrow-up-right"></i>
+            </div>
+            <div class="card-name">{{ p.title }}</div>
+          </a>
 
-                <!-- külső link -->
-                <a
-                  *ngIf="t.link && !t.link.startsWith('/')"
-                  [href]="t.link"
-                  target="_blank"
-                  rel="noopener"
-                  class="badge tech-tag"
-                  >{{ t.name }}</a
-                >
-
-                <!-- csak szöveg -->
-                <span *ngIf="!t.link" class="badge tech-tag">{{ t.name }}</span>
-              </li>
-            </ul>
+          <div class="project-description-hover">
+            {{ p.description }}
           </div>
+        </ng-container> -->
 
-          <!-- CTA ikon -->
-          <div class="cta">
-            <i class="bi bi-box-arrow-up-right"></i>
+        <ng-container *ngFor="let p of projects">
+          <div
+            class="project-wrapper"
+            (mouseenter)="onMouseEnter(p)"
+            (mouseleave)="onMouseLeave()"
+          >
+            <a
+              class="project-card"
+              [href]="p.demo"
+              target="_blank"
+              rel="noopener"
+            >
+              <img class="cover" [src]="p.img" [alt]="p.title" />
+
+              <div class="info">
+                <h3 class="title">{{ p.title }}</h3>
+                <ul class="tech list-inline">
+                  <li *ngFor="let t of p.tech">
+                    <a
+                      *ngIf="t.link?.startsWith('/')"
+                      [routerLink]="t.link"
+                      class="badge tech-tag"
+                      >{{ t.name }}</a
+                    >
+                    <a
+                      *ngIf="t.link && !t.link.startsWith('/')"
+                      [href]="t.link"
+                      target="_blank"
+                      rel="noopener"
+                      class="badge tech-tag"
+                      >{{ t.name }}</a
+                    >
+                    <span *ngIf="!t.link" class="badge tech-tag">{{
+                      t.name
+                    }}</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="cta">
+                <i class="bi bi-box-arrow-up-right"></i>
+              </div>
+            </a>
+
+            <!-- Csak hoverkor jelenik meg -->
+            <div class="project-description-hover" *ngIf="hoveredProject === p">
+              {{ p.description }}
+            </div>
           </div>
-          <div class="card-name">{{ p.title }}</div>
-        </a>
+        </ng-container>
       </div>
     </div>
   </section>

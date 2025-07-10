@@ -8,7 +8,9 @@ interface Project {
   title: string;
   img: string;
   demo: string;
+  description: string;
   tech: TechTag[];
+  showDescription?: boolean;
 }
 
 @Component({
@@ -17,12 +19,23 @@ interface Project {
   styleUrls: ['./projects.component.scss'],
 })
 export class ProjectsComponent {
-  /** egyszerű mintaadat – bővíthető */
+  hoveredProject: any = null;
+
+  onMouseEnter(p: any) {
+    this.hoveredProject = p;
+  }
+
+  onMouseLeave() {
+    this.hoveredProject = null;
+  }
+
   projects: Project[] = [
     {
       title: 'Cinema Bites Project',
       img: './img/alpha-project.png',
       demo: 'https://angular-fb-final-project-alpha.web.app/',
+      description: 'A personal portfolio built with Angular 16 and SCSS. ',
+      showDescription: false,
       tech: [
         { name: 'Angular', link: '/tags/angular' },
         { name: 'Firebase', link: 'https://firebase.google.com/' },
@@ -30,24 +43,21 @@ export class ProjectsComponent {
       ],
     },
     {
-      title: 'Recipe Planner',
-      img: 'assets/img/projects/recipe.webp',
-      demo: 'https://recipe-planner-alpha.web.app/',
+      title: 'Cinema Bites Project',
+      img: './img/portfolio-project.png',
+      demo: 'https://my-portfolio.web.app/',
+      description: 'A personal portfolio built with Angular 16 and SCSS. ',
+      showDescription: false,
       tech: [
-        { name: 'React', link: '/tags/react' },
-        { name: 'Tailwind', link: 'https://tailwindcss.com/' },
-        { name: 'TypeScript' },
-      ],
-    },
-    {
-      title: 'Chef’s Dashboard',
-      img: 'assets/img/projects/dashboard.webp',
-      demo: 'https://chef-dashboard-alpha.web.app/',
-      tech: [
-        { name: 'Vue', link: '/tags/vue' },
-        { name: 'Pinia' },
-        { name: 'Chart.js', link: 'https://www.chartjs.org/' },
+        { name: 'Angular', link: '/tags/angular' },
+        { name: 'Firebase', link: 'https://firebase.google.com/' },
+        { name: 'SCSS' },
       ],
     },
   ];
+
+  toggleDescription(project: any, event: MouseEvent): void {
+    event.preventDefault(); // ne ugorjon linkre rögtön
+    project.showDescription = !project.showDescription;
+  }
 }

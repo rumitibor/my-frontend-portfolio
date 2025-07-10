@@ -11,10 +11,25 @@ import { CvComponent } from './components/cv/cv/cv.component';
 import { AboutComponent } from './components/about/about/about.component';
 import { ContactComponent } from './components/contact/contact/contact.component';
 import { ProjectsComponent } from './components/projects/projects/projects.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, HomeComponent, FooterComponent, CvComponent, AboutComponent, ContactComponent, ProjectsComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    HomeComponent,
+    FooterComponent,
+    CvComponent,
+    AboutComponent,
+    ContactComponent,
+    ProjectsComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
