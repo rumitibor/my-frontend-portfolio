@@ -34,7 +34,8 @@ export class ProjectsComponent {
       title: 'Cinema Bites Project',
       img: './img/alpha-project.png',
       demo: 'https://angular-fb-final-project-alpha.web.app/',
-      description: 'A personal portfolio built with Angular 16 and SCSS. ',
+      description:
+        'A team-developed cinema web application built with Angular 16, Firebase, and SCSS.',
       showDescription: false,
       tech: [
         { name: 'Angular', link: '/tags/angular' },
@@ -43,10 +44,11 @@ export class ProjectsComponent {
       ],
     },
     {
-      title: 'Cinema Bites Project',
+      title: 'My Portfolio',
       img: './img/portfolio-project.png',
       demo: 'https://my-portfolio.web.app/',
       description: 'A personal portfolio built with Angular 16 and SCSS. ',
+
       showDescription: false,
       tech: [
         { name: 'Angular', link: '/tags/angular' },

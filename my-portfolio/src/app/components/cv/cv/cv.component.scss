@@ -12,6 +12,7 @@ body {
   color: #e6e0d6;
 
   padding-top: 100px;
+  padding-bottom: 50px;
 }
 
 .cv-link {
@@ -41,18 +42,11 @@ body {
     0 0 18px lighten(#ffd9b0, 15%), 0 0 26px lighten(#ffd9b0, 25%);
 }
 
-// .cv-wrapper {
-//   display: grid;
-//   grid-template-columns: repeat(12, 1fr);
-//   grid-auto-rows: minmax(0, auto);
-//   gap: 4rem 0;
-
-//   max-width: 960px;
-//   width: 100%;
-//   margin-inline: auto;
-
-//   padding-inline: clamp(1rem, 4vw, 2rem);
-// }
+.portrait-wrap {
+  max-width: 140px;
+  margin-bottom: 50px;
+  transform: translate(0px, -100px);
+}
 
 .section {
   grid-column: 2 / span 10;

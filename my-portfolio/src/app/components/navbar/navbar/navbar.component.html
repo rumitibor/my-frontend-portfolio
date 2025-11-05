@@ -18,25 +18,138 @@
 
   <div class="collapse navbar-collapse" id="mainNavbar">
     <ul class="navbar-nav ms-lg-auto text-center">
+      <!-- HOME -->
       <li
+        class="nav-item"
+        *ngIf="(screen.isMobile$ | async) === false"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <a
+          routerLink="/"
+          class="nav-link"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNavbar"
+          >Home</a
+        >
+      </li>
+
+      <li class="nav-item" *ngIf="(screen.isMobile$ | async) === true">
+        <a
+          href="#home"
+          class="nav-link"
+          (click)="scrollTo('home')"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNavbar"
+          >Home</a
+        >
+      </li>
+
+      <!-- <li
         class="nav-item"
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true }"
       >
-        <a routerLink="/" class="nav-link">Home</a>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a routerLink="/about" class="nav-link">About</a>
+        <a
+          routerLink="/"
+          class="nav-link"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNavbar"
+          >Home</a
+        >
+      </li> -->
+      <!-- <li class="nav-item" routerLinkActive="active">
+        <a
+          routerLink="/about"
+          class="nav-link"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNavbar"
+          >About</a
+        >
+      </li> -->
+
+      <li class="nav-item" *ngIf="(screen.isMobile$ | async) === false">
+        <a
+          routerLink="/about"
+          class="nav-link"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNavbar"
+          >About</a
+        >
       </li>
 
-      <li class="nav-item" routerLinkActive="active">
-        <a routerLink="/projects" class="nav-link">Projects</a>
+      <li class="nav-item" *ngIf="(screen.isMobile$ | async) === true">
+        <a
+          href="#about"
+          class="nav-link"
+          (click)="scrollTo('about')"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNavbar"
+          >About</a
+        >
       </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a routerLink="/contact" class="nav-link">Contact</a>
+
+      <!-- PROJECTS -->
+      <li class="nav-item" *ngIf="(screen.isMobile$ | async) === false">
+        <a
+          routerLink="/projects"
+          class="nav-link"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNavbar"
+          >Projects</a
+        >
       </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a routerLink="/cv" class="nav-link">CV</a>
+      <li class="nav-item" *ngIf="(screen.isMobile$ | async) === true">
+        <a
+          href="#projects"
+          class="nav-link"
+          (click)="scrollTo('projects')"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNavbar"
+          >Projects</a
+        >
+      </li>
+
+      <!-- CV -->
+      <li class="nav-item" *ngIf="(screen.isMobile$ | async) === false">
+        <a
+          routerLink="/cv"
+          class="nav-link"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNavbar"
+          >CV</a
+        >
+      </li>
+      <li class="nav-item" *ngIf="(screen.isMobile$ | async) === true">
+        <a
+          href="#cv"
+          class="nav-link"
+          (click)="scrollTo('cv')"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNavbar"
+          >CV</a
+        >
+      </li>
+
+      <!-- CONTACT -->
+      <li class="nav-item" *ngIf="(screen.isMobile$ | async) === false">
+        <a
+          routerLink="/contact"
+          class="nav-link"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNavbar"
+          >Contact</a
+        >
+      </li>
+      <li class="nav-item" *ngIf="(screen.isMobile$ | async) === true">
+        <a
+          href="#contact"
+          class="nav-link"
+          (click)="scrollTo('contact')"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNavbar"
+          >Contact</a
+        >
       </li>
     </ul>
   </div>

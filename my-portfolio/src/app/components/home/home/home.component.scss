@@ -172,6 +172,26 @@ p {
   transition-delay: calc(var(--i) * 60ms);
 }
 
+/* home.component.css */
+app-about,
+app-projects,
+app-contact,
+app-cv {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  app-about,
+  app-projects,
+  app-contact,
+  app-cv {
+    display: block;
+  }
+  .home-comp {
+    background-color: #1a1a1a;
+  }
+}
+
 @media (min-width: 991px) and (max-width: 1200px) {
   .portrait-wrapper {
     transform: translate(-20px, 50px);

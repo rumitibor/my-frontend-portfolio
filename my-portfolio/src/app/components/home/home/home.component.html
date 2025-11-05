@@ -1,5 +1,6 @@
 <section
   class="home-wrapper d-flex align-items-center p-4"
+  id="home"
   style="
     background-image: url('./img/background.png');
     background-size: cover;
@@ -69,7 +70,7 @@
         <div class="portrait-wrapper shadow-lg">
           <img
             src=".\img\portrait2.png"
-            alt="Portrait of John Doe"
+            alt="Portrait of Tibor Rumi"
             class="img-fluid rounded portrait"
           />
         </div>
@@ -119,4 +120,12 @@
       </div>
     </div>
   </div>
+
+  <!-- home.component.html -->
+</section>
+<section class="home-comp">
+  <app-about id="about"></app-about>
+  <app-projects id="projects"></app-projects>
+  <app-cv id="cv"></app-cv>
+  <app-contact id="contact"></app-contact>
 </section>
