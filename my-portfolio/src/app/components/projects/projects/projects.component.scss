@@ -31,7 +31,7 @@ $bg-glass: rgba(15, 15, 15, 0.55);
     transition: transform 0.55s ease;
   }
   &:hover .cover {
-    transform: scale(1.08);
+    transform: scale(0.95);
   }
 
   .info {
@@ -46,21 +46,26 @@ $bg-glass: rgba(15, 15, 15, 0.55);
       font-size: 1.1rem;
       color: $accent;
     }
+    .tech {
+      display: grid;
+      grid-row: auto;
+      grid-template-columns: repeat(auto-fit, minmax(80px, auto));
 
-    .badge.tech-tag {
-      display: inline-block;
-      font-size: 0.72rem;
-      padding: 0.18rem 0.6rem;
-      margin: 0.2rem 0.3rem 0.2rem 0;
-      border-radius: 14px;
-      background: rgba($accent-rgb..., 0.15);
-      border: 1px solid $accent-light;
-      color: #94897c;
-      text-decoration: none;
-      transition: background 0.25s, transform 0.25s;
-      &:hover {
-        background: rgba($accent-rgb..., 0.3);
-        transform: translateY(-2px);
+      .badge.tech-tag {
+        display: inline-block;
+        font-size: 0.72rem;
+        padding: 0.18rem 0.6rem;
+        margin: 0.2rem 0.3rem 0.2rem 0;
+        border-radius: 14px;
+        background: rgba($accent-rgb..., 0.15);
+        border: 1px solid $accent-light;
+        color: #0f0f0f;
+        text-decoration: none;
+        transition: background 0.25s, transform 0.25s;
+        &:hover {
+          background: rgba($accent-rgb..., 0.3);
+          transform: translateY(-2px);
+        }
       }
     }
   }
@@ -110,8 +115,10 @@ $bg-glass: rgba(15, 15, 15, 0.55);
 .project-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem; /* térköz a kártyák között */
+  row-gap: 80px;
+  column-gap: 40px;
   padding: 1rem;
+  margin-bottom: 50px;
 }
 
 .project-description-hover {
@@ -143,14 +150,19 @@ $bg-glass: rgba(15, 15, 15, 0.55);
 }
 
 .section-heading {
-  color: $accent;
+  color: rgba(77, 47, 7, 0.55);
   letter-spacing: 1px;
   text-transform: uppercase;
   font-weight: 600;
   margin-top: 150px;
   margin-bottom: 70px;
   position: relative;
-  background: linear-gradient(90deg, $accent, #fff, $accent);
+  background: linear-gradient(
+    90deg,
+    rgba(77, 47, 7, 0.55),
+    #fff,
+    rgba(231, 199, 158, 0.55)
+  );
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
